@@ -1,0 +1,4 @@
+self: play -> scafi 0.2
+
+require:
+    - play
