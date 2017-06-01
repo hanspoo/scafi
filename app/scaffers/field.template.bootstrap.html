@@ -1,0 +1,7 @@
+	#{field 'FIELD_NAME'}
+		<div class="form-group ${field.errorClass ? 'has-error' : ''}">
+			<label for="${field.id}" class="control-label">FIELD_LABEL <span class="required">*</span></label>
+			<input type="text" class="form-control " name="${field.name}" id="${field.id}"  value="${field.value}">  
+			<span class="error">${field.error}</span>
+		</div>
+	#{/field}

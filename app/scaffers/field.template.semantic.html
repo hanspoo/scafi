@@ -1,0 +1,7 @@
+	#{field 'FIELD_NAME'}
+	  <div class="field ${field.errorClass ? 'error' : ''}">
+	    <label>FIELD_LABEL</label>
+	    <input  name="${field.name}" type="text" value="${field.value}">
+	    <span class="error">${field.error}</span>
+	  </div>
+	#{/field}

@@ -28,15 +28,5 @@ public interface Scaffolder {
 
 	public List<String> fieldsHtml(String instanceName);
 
-	static List<Field> fields(Class<?> clazz) {
-
-		Field[] fields = clazz.getFields();
-		List<Field> campos = Arrays.asList(fields);
-
-		campos = campos.stream().filter(field -> !(field.getName().matches("id|willBeSaved")
-				|| java.lang.reflect.Modifier.isStatic(field.getModifiers()))).collect(Collectors.toList());
-
-		return campos;
-	}
 
 }
