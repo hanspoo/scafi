@@ -35,6 +35,7 @@ public class TemplatesController extends Controller {
 
 	}
 
+	@SuppressWarnings("unused")
 	public static void crearTemplate(@Required String clase, String modo,
 			String instanceName) throws ClassNotFoundException, IOException {
 
