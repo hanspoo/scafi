@@ -21,4 +21,9 @@ public class ScaffolderSemantic extends ScaffolderImpl {
 		return "field.template.semantic.html";
 	}
 
+	@Override
+	public String alertClases() {
+		return "ui error message";
+	}
+
 }

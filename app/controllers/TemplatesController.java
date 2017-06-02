@@ -114,16 +114,18 @@ public class TemplatesController extends Controller {
 		if (validation.hasErrors())
 			render("@index", framework, clase, modo, instanceName);
 
+		Scaffolder scaf1 = Scaffolder.get(framework, Class.forName(clase));
+		
 		File f = File.createTempFile("template", ".html");
 		try (Writer w = new FileWriter(f)) {
 
 			String header = "#{extends 'main.html' /}\r\n" + "\r\n" + "#{ifErrors}\r\n"
-					+ "<div class=\"alert alert-danger\">Por favor corrija los campos destacados</div>\r\n"
+					+ "<div class=\""+ scaf1.alertClases() +"\">Por favor corrija los campos destacados</div>\r\n"
 					+ "#{/ifErrors}\r\n" + "\r\n" + "<form method=\"POST\" action=\"@{}\">\r\n";
 
 			w.write(header);
 
-			Scaffolder scaf1 = Scaffolder.get(framework, Class.forName(clase));
+			
 			List<String> fields = scaf1.fieldsHtml(instanceName);
 			for (String string : fields) {
 				w.write(string);

@@ -28,5 +28,6 @@ public interface Scaffolder {
 
 	public List<String> fieldsHtml(String instanceName);
 
+	public String alertClases();
 
 }
