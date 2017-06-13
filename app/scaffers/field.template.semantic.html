@@ -1,7 +1,11 @@
-	#{field 'FIELD_NAME'}
-	  <div class="field ${field.errorClass ? 'error' : ''}">
-	    <label>FIELD_LABEL</label>
-	    <input  name="${field.name}" type="text" value="${field.value}">
-	    <span class="error">${field.error}</span>
-	  </div>
-	#{/field}
+#{field 'FIELD_NAME'}
+	<div class="required field ${field.errorClass ? 'error' : ''}">
+		<label for="${field.id}">FIELD_LABEL</label>
+		<input  name="${field.name}" type="text" value="${field.value}" id="${field.id}">
+		#{if field.error}
+			<div class="ui pointing red basic label">
+				${field.error}
+			</div>
+		#{/if}
+	</div>
+#{/field}
